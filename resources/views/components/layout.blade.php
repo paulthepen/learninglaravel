@@ -17,7 +17,7 @@
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
-                            <x-nav-link href="/">Home</x-nav-link>
+                            <x-nav-link href="home">Home</x-nav-link>
                             <x-nav-link href="jobs">Jobs</x-nav-link>
                             <x-nav-link href="contact">Contact</x-nav-link>
                         </div>
@@ -73,7 +73,7 @@
         <el-disclosure id="mobile-menu" hidden class="block md:hidden">
             <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
                 <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-                <a href="/" aria-current="page"
+                <a href="/home" aria-current="page"
                    class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white">Home</a>
                 <a href="/jobs"
                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Jobs</a>
