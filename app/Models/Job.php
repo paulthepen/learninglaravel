@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Job extends Model {
     use HasFactory;
 
-    protected $table = 'job_listings'; // Specify the table name in the event that class doesn't follow table name
-    protected $fillable = ['title', 'salary'];
+    protected $table = 'job_listings'; //(Optional) Specify the table name in the event that class doesn't follow table name
+//    protected $fillable = ['title', 'salary', 'employer_id']; //Fields that can be mass assigned
+    protected $guarded = []; //The opposite of fillable, fields that cannot be mass assigned (blank means all are fillable)
 
     public function employer() {
         return $this->belongsTo(Employer::class);
