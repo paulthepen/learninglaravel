@@ -61,14 +61,16 @@ Route::controller(JobController::class)->group(function() {
     Route::post('/jobs', 'store');
     Route::delete('/jobs/{id}', 'destroy');
     Route::get('/jobs/{job:id}', 'show');
-    Route::get('/jobs/{job}/edit', 'edit');
+    Route::get('/jobs/{job}/edit', 'edit')
+        ->middleware('auth')
+        ->can('edit', 'job');
 });
 
 //Auth
 Route::get('/register', [RegisteredUserController::class, 'create']);
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
-Route::get('/login', [SessionController::class, 'create']);
+Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
 
